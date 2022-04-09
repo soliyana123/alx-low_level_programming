@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
-*main - Prints all possible combinations of three diffrent digits in ascending order
+*main - Prints all possible combinations of three diffrent digits in ascending order, separeted by a comma followed by a space.
 *
 *Return: Always 0 (Success)
 */
@@ -21,10 +21,10 @@ putchar((digit2 % 10) + '0');
 putchar((digit3 % 10) + '0');
 
 if (digit1 == 7 && digit2 == 8 && digit3 == 9)
-	continue;
+continue;
 putchar(',');
 putchar(' ');
-}
+i}
 }
 }
 putchar('\n');
