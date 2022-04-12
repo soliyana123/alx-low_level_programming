@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 
 /**
@@ -18,7 +19,7 @@ for (j = 0; j <= n; j++)
 res = (i * j);
 if (j != 0)
 {
-_putchar(',');
+_putchar(' ');
 _putchar(' ');
 }
 if (res < 10 && j != 0)
