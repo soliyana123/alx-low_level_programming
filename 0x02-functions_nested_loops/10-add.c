@@ -8,7 +8,7 @@
  * Return: Always 0.
  */
 
-int add(int i, intl)
+int add(int i, int l)
 {
 	return (i + l);
 }
