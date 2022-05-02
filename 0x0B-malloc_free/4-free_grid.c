@@ -1,9 +1,13 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 /**
- * free_grid - allocates a grid
- * @grid: takes in width of grid
- * @height: height of grid
- * Return: free grid
+ * free_grid - frees a 2 dimensional grid 
+ * @grid: matrix double pointer
+ * @height: rows (pointer)
+ *
+ * Return: Nothing
  */
 
 void free_grid(int **grid, int height)
@@ -12,8 +16,8 @@ void free_grid(int **grid, int height)
 
 	for (i = 0; i < height; i++)
 	{
-		free(grid[i]);
+		free(*(grid + i));
 	}
-
 	free(grid);
 }
+
