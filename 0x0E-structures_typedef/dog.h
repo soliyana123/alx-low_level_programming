@@ -6,6 +6,7 @@
  * @name: name of poppy
  * @age: age of poppy
  * @owner: owner of poppy
+ * Description: this struct is for poppy
  */
 
 typedef struct dog
