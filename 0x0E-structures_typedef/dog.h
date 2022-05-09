@@ -2,26 +2,24 @@
 #define DOG_H
 
 /**
- * struct poppy - struture of poppy
- * @name: name of poppy
- * @age: age of poppy
- * @owner: owner of poppy
- * Description: this struct is for poppy
+ * struct dog - Struct dog
+ * @name: name
+ * @age: age
+ * @owner:  owner
+ * Description: This struct is for dog
  */
 
-int main(void)
+struct dog
 {
-	typedef struct dog;
-
 	char *name;
 	float age;
 	char *owner;
+};
 
-}
-
-int _putchar(char c);
+typedef struct dog dog_t;
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
 dog_t *new_dog(char *name, float age, char *owner);
 void free_dog(dog_t *d);
-#endif /* #ifndef DOG_H */
+
+#endif /*DOG_H*/
