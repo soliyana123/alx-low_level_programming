@@ -10,75 +10,54 @@
 
 char *_strdup(char *str)
 {
-	char *ptr;
-	int i, len;
+	char *dup;
+	unsigned int i = 0;
+	unsigned int j = 0;
 
-	if (src == NULL)
-	{
+	if (str == NULL)
 		return (NULL);
-	}
-
-	for (len = 0; src[len] != '\0'; len++)
-		;
-
-	ptr = malloc(sizeof(char) * (len + 1));
-
-	if (ptr == NULL)
-	{
+	while (str[i] != '\0')
+		i += 1;
+	i += 1;
+	dup = malloc(i * sizeof(*dup));
+	if (dup == NULL)
 		return (NULL);
-	}
-
-	for (i = 0; src[i] != '\0'; i++)
+	while (j < i)
 	{
-		ptr[i] = src[i];
+		dup[j] = str[j];
+		j += 1;
 	}
-
-	ptr[i] = '\0';
-	return (ptr);
+	return (dup);
 }
 
 /**
- * new_dog - Create a new dog variable
- * @name:        Name of the dog
- * @age:         Age of the dog
- * @owner:       Owner of the dog
- * Return:       Pointer to new dog variable
+ *new_dog - function that creates a new dog
+ *@name: name of dog
+ *@age: age of dog
+ *@owner:owner of dog
+ *Return: new struct
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *poppy;
-	char *new_name, *new_owner;
+	struct dog *new_dog;
 
-	if (name == NULL || owner == NULL)
+	new_dog = malloc(sizeof(struct dog));
+	if (new_dog == NULL)
+		return (NULL);
+	new_dog->name = _strdup(name);
+	if (new_dog->name == NULL)
 	{
+		free(new_dog);
 		return (NULL);
 	}
-
-	poppy = malloc(sizeof(dog_t));
-	if (poppy == NULL)
+	new_dog->age = age;
+	new_dog->owner = _strdup(owner);
+	if (new_dog->owner == NULL)
 	{
+		free(new_dog);
+		free(new_dog->name);
 		return (NULL);
 	}
-
-	new_name = _copy(name);
-	if (new_name == NULL)
-	{
-		free(poppy);
-		return (NULL);
-	}
-	(*poppy).name = new_name;
-
-	(*poppy).age = age;
-
-	new_owner = _copy(owner);
-	if (new_owner == NULL)
-	{
-		free((poppy).name);
-		free(poppy);
-		return (NULL);
-	}
-	(*popy)p.owner = new_owner;
-
-	return (poppy);
+	return (new_dog);
 }
