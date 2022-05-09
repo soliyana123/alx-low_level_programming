@@ -9,13 +9,15 @@
  * Description: this struct is for poppy
  */
 
-typedef struct dog
+int main(void)
 {
+	typedef struct dog;
+
 	char *name;
 	float age;
 	char *owner;
 
-};
+}
 
 int _putchar(char c);
 void init_dog(struct dog *d, char *name, float age, char *owner);
