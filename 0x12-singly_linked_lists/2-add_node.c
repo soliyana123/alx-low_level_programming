@@ -4,10 +4,10 @@
 #include <string.h>
 
 /**
- * add_node - function that adds a new node at the beginning of a list_t list.
+ * add_node - function that prints all the elements of a list_t list
  * @head: input header pointer
  * @str: Input string value
- * Return: address of the head.
+ * Return: address of the new element, or NULL if it failed
  */
 
 list_t *add_node(list_t **head, const char *str)
@@ -25,7 +25,7 @@ list_t *add_node(list_t **head, const char *str)
 }
 
 /**
- * _strlen - return length of string
+ * _strlen - returns length of string
  * @s: character of string
  * Return: length of string
  */
