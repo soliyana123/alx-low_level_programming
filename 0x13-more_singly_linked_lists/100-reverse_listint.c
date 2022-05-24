@@ -8,20 +8,23 @@
  * Description: Add a new node
  * Return: New node
  */
+
 listint_t *reverse_listint(listint_t **head)
 {
-    listint_t *prev = NULL;
-    listint_t *next = NULL;
+	listint_t *first;
+	listint_t  *last;
 
-    while (*head)
-    {
-        next = (*head)->next;
-        (*head)->next = prev;
-        prev = *head;
-        *head = next;
-    }
+	if (!head && !*head)
+		return (NULL);
 
-    *head = prev;
-
-    return (*head);
+	first = *head;
+	*head = NULL;
+	while (first)
+	{
+		last = first;
+		first = first->next;
+		last->next = *head;
+		*head = last;
+	}
+	return (*head);
 }
