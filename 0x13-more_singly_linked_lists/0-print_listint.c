@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #include "lists.h"
+
 /**
- * print_listint - function that print a list
+ * print_listint - print a list
  * @h: integer
  *
  * Description: singly linked list node structure
