@@ -1,4 +1,8 @@
-#include "lists.h"
+#include <string.h>
+#include <stdio.h>
+#include "list.h"
+
+
 /**
  * add_node_end - at the end
  * @head: noe head
@@ -44,3 +48,4 @@ list_t *add_node_end(list_t **head, const char *str)
 
 	return (new);
 }
+
