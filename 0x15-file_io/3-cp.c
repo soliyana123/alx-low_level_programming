@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <unistd.h>
 #include "main.h"
+#include <sys/stat.h>
+#include <sys/types.h>
 
 /**
  * main - copies the content of a file to another file
