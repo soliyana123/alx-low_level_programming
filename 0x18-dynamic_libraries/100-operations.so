@@ -1,0 +1,2 @@
+gcc -c -fPIC arithmatic.c -o arithmatic.o
+gcc arithmatic.o -shared -o operations.so
